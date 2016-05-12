@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface TaskliskTableViewController : UITableViewController
+- (IBAction)editButtonPressed:(id)sender;
 
 @property (nonatomic,strong)NSMutableArray *tasks;
+
 
 @end

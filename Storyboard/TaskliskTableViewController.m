@@ -3,12 +3,14 @@
 //  Storyboard
 //
 //  Created by Revo Tech on 5/11/16.
+
 //  Copyright © 2016 Revo Tech. All rights reserved.
 //
 
 #import "TaskliskTableViewController.h"
 #import "Tasky.h"
 #import "AddTaskTableViewController.h"
+#import "EditTaskTableViewController.h"
 
 @interface TaskliskTableViewController ()
 
@@ -22,19 +24,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tasks= [[NSMutableArray alloc]init];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-     self.tasks= [[NSMutableArray alloc]init];
-    Tasky *task = [[Tasky alloc] initWithName:@"MyFirst task" done:NO];
+
+    //    Tasky *task = [[Tasky alloc] initWithName:@"MyFirst task" done:NO];
     
-    [self.tasks addObject:task];
+    //   [self.tasks addObject:task];
     
-    Tasky *doneTask = [[Tasky alloc] initWithName:@"MyFirst done task" done:YES];
+    //    Tasky *doneTask = [[Tasky alloc] initWithName:@"MyFirst done task" done:YES];
     
-    [self.tasks addObject:doneTask];
+    //  [self.tasks addObject:doneTask];
     
     [self.tableView reloadData];
 }
@@ -43,6 +47,18 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+    
+}
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+}
+
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
@@ -51,10 +67,15 @@
         UINavigationController *navCon = segue.destinationViewController;
         
         AddTaskTableViewController *addTaskViewController = [navCon.viewControllers objectAtIndex:0];
-        addTaskViewController.taskListViewController = self
-        ;
+        addTaskViewController.taskListViewController = self;
     }
-
+        else if ([segue.identifier isEqualToString:@"EditDoneTaskSegue"] || [segue.identifier isEqualToString:@"EditNotDoneTaskSegue"]){
+        EditTaskTableViewController *editTaskViewController = segue.destinationViewController;
+        editTaskViewController.task = [self.tasks objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+        
+        
+    }
+    
 }
 
 #pragma mark - Table view data source
@@ -102,31 +123,38 @@
 }
 */
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        [self.tasks removeObjectAtIndex:indexPath.row];
+        
+        
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
 
-/*
+
+
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+    Tasky *moveTask = [self.tasks objectAtIndex:fromIndexPath.row];
+    [self.tasks removeObjectAtIndex:fromIndexPath.row];
+    [self.tasks insertObject:moveTask atIndex:toIndexPath.row];
+    
 }
-*/
 
-/*
+
+
 // Override to support conditional rearranging of the table view.
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the item to be re-orderable.
     return YES;
 }
-*/
+
 
 /*
 #pragma mark - Navigation
@@ -137,5 +165,10 @@
     // Pass the selected object to the new view controller.
 }
 */
+#pragma mark - IBActions
+
+-(void)editButtonPressed:(id)sender{
+    self.editing = !self.editing;
+}
 
 @end

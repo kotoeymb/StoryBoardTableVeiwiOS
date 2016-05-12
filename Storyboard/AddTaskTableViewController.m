@@ -47,7 +47,7 @@
     
     [self dismissModalViewControllerAnimated:YES];
     
-    [self.taskListViewController.tableView reloadData];
+   // [self.taskListViewController.tableView reloadData];
     
 }
 

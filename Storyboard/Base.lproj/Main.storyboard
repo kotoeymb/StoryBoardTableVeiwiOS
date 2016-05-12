@@ -44,13 +44,13 @@
                                             <rect key="frame" x="15" y="0.0" width="550" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="w7W-iV-Ovl" kind="push" id="V2H-US-C9R"/>
+                                    <segue destination="w7W-iV-Ovl" kind="push" identifier="EditNotDoneTaskSegue" id="V2H-US-C9R"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DoneTaskcell" textLabel="549-79-PeY" style="IBUITableViewCellStyleDefault" id="h2l-Yi-kJz">
@@ -70,7 +70,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="w7W-iV-Ovl" kind="push" id="ZRd-1a-VAF"/>
+                                    <segue destination="w7W-iV-Ovl" kind="push" identifier="EditDoneTaskSegue" id="ZRd-1a-VAF"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -81,6 +81,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Tasks" id="m4V-JZ-FId">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="KRG-UZ-m8f">
+                            <connections>
+                                <action selector="editButtonPressed:" destination="ODk-DY-lW9" id="Tdr-7z-uOT"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="PcZ-U1-2qs">
                             <connections>
                                 <segue destination="Ynj-c5-7QH" kind="modal" identifier="AddTaskSegue" id="wd4-J9-lKa"/>
@@ -99,7 +104,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="azk-lP-PUd">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection headerTitle="Name" id="wPG-lq-PKi">
                                 <cells>
@@ -110,7 +115,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LTa-ra-TKs">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LTa-ra-TKs">
                                                     <rect key="frame" x="13" y="8" width="579" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -144,16 +149,16 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AAw-6g-gGk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3456" y="190"/>
+            <point key="canvasLocation" x="3403" y="138"/>
         </scene>
         <!--Edit Task-->
         <scene sceneID="MS2-9U-rjL">
             <objects>
-                <tableViewController id="w7W-iV-Ovl" sceneMemberID="viewController">
+                <tableViewController id="w7W-iV-Ovl" customClass="EditTaskTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="zOt-dB-ofg">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection headerTitle="NAME" id="dfb-NW-MBk">
                                 <cells>
@@ -163,6 +168,16 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QNP-Ma-anl" id="805-I2-8XV">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cj6-lm-6JQ">
+                                                    <rect key="frame" x="8" y="5" width="514" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="taskDataChanged:" destination="w7W-iV-Ovl" eventType="editingChanged" id="r98-G7-4Ho"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -179,15 +194,19 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Done" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7b-DD-cV0">
                                                     <rect key="frame" x="14" y="9" width="41" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s6v-Td-yNm">
-                                                    <rect key="frame" x="532" y="6" width="51" height="31"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s6v-Td-yNm">
+                                                    <rect key="frame" x="517" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="taskDataChanged:" destination="w7W-iV-Ovl" eventType="valueChanged" id="4bf-mJ-whg"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="s6v-Td-yNm" secondAttribute="trailing" constant="11" id="ISd-xp-7My"/>
+                                                <constraint firstItem="s6v-Td-yNm" firstAttribute="centerY" secondItem="luL-zK-qYY" secondAttribute="centerY" id="HTc-s8-vZY"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="s6v-Td-yNm" secondAttribute="trailing" constant="30" id="suT-Ov-Zn4"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -200,10 +219,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Edit Task" id="Ltj-YK-EJy"/>
+                    <connections>
+                        <outlet property="doneSwitch" destination="s6v-Td-yNm" id="EVg-rd-qrk"/>
+                        <outlet property="nameField" destination="Cj6-lm-6JQ" id="aMa-Mq-cHU"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7q0-gk-23J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2636" y="962"/>
+            <point key="canvasLocation" x="2528" y="1288"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ilv-Py-LE9">

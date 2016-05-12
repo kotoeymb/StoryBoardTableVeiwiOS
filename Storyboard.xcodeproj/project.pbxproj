@@ -14,6 +14,7 @@
 		4342145E1CE1F40500999F6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4342145C1CE1F40500999F6B /* Main.storyboard */; };
 		434214601CE1F40500999F6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4342145F1CE1F40500999F6B /* Assets.xcassets */; };
 		434214631CE1F40500999F6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 434214611CE1F40500999F6B /* LaunchScreen.storyboard */; };
+		435384511CE34A5E00F9301F /* EditTaskTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 435384501CE34A5E00F9301F /* EditTaskTableViewController.m */; };
 		43D46BA71CE2E3BB0059CAC6 /* TaskliskTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D46BA61CE2E3BB0059CAC6 /* TaskliskTableViewController.m */; };
 		43D46BAA1CE2ECDB0059CAC6 /* AddTaskTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D46BA91CE2ECDB0059CAC6 /* AddTaskTableViewController.m */; };
 /* End PBXBuildFile section */
@@ -31,6 +32,8 @@
 		4342145F1CE1F40500999F6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		434214621CE1F40500999F6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		434214641CE1F40500999F6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4353844F1CE34A5E00F9301F /* EditTaskTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTaskTableViewController.h; sourceTree = "<group>"; };
+		435384501CE34A5E00F9301F /* EditTaskTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTaskTableViewController.m; sourceTree = "<group>"; };
 		43D46BA51CE2E3BB0059CAC6 /* TaskliskTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskliskTableViewController.h; sourceTree = "<group>"; };
 		43D46BA61CE2E3BB0059CAC6 /* TaskliskTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskliskTableViewController.m; sourceTree = "<group>"; };
 		43D46BA81CE2ECDB0059CAC6 /* AddTaskTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTaskTableViewController.h; sourceTree = "<group>"; };
@@ -80,6 +83,8 @@
 				431851701CE1FDD000DAEB6F /* Tasky.m */,
 				43D46BA51CE2E3BB0059CAC6 /* TaskliskTableViewController.h */,
 				43D46BA61CE2E3BB0059CAC6 /* TaskliskTableViewController.m */,
+				4353844F1CE34A5E00F9301F /* EditTaskTableViewController.h */,
+				435384501CE34A5E00F9301F /* EditTaskTableViewController.m */,
 				43D46BA81CE2ECDB0059CAC6 /* AddTaskTableViewController.h */,
 				43D46BA91CE2ECDB0059CAC6 /* AddTaskTableViewController.m */,
 			);
@@ -167,6 +172,7 @@
 				43D46BAA1CE2ECDB0059CAC6 /* AddTaskTableViewController.m in Sources */,
 				4342145B1CE1F40500999F6B /* ViewController.m in Sources */,
 				434214581CE1F40500999F6B /* AppDelegate.m in Sources */,
+				435384511CE34A5E00F9301F /* EditTaskTableViewController.m in Sources */,
 				434214551CE1F40500999F6B /* main.m in Sources */,
 				43D46BA71CE2E3BB0059CAC6 /* TaskliskTableViewController.m in Sources */,
 				431851711CE1FDD000DAEB6F /* Tasky.m in Sources */,
