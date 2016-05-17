@@ -13,6 +13,9 @@
 @interface EditTaskTableViewController : UITableViewController
 @property (nonatomic,strong) IBOutlet UITextField *nameField;
 
+@property (strong, nonatomic) IBOutlet UITextField *fatherNameField;
+@property (strong, nonatomic) IBOutlet UITextField *addressField;
+@property (strong, nonatomic) IBOutlet UITextField *noteField;
 @property (nonatomic,strong) IBOutlet UISwitch *doneSwitch;
 @property (nonatomic,strong) Tasky *task; 
 

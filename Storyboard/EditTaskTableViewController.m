@@ -15,6 +15,10 @@
 @implementation EditTaskTableViewController
 
 @synthesize nameField = _nameField;
+@synthesize fatherNameField = _fatherNameField;
+@synthesize addressField = _addressField;
+@synthesize noteField = _noteField;
+
 @synthesize doneSwitch = _doneSwitch;
 @synthesize task = _task;
 
@@ -57,6 +61,9 @@
 //    }
     
     self.nameField.text = self.task.name;
+    self.fatherNameField.text = self.task.fathername;
+    self.addressField.text = self.task.address;
+    self.noteField.text = self.task.note;
     [self.doneSwitch setOn:self.task.done];
     
 }
@@ -84,7 +91,10 @@
 -(void)taskDataChanged:(id)sender
 {
     self.task.name = self.nameField.text;
-    self.task.done = self.doneSwitch.isOn;
+//    self.task.fathername = self.fatherNameField.text;
+//    self.task.address = self.addressField.text;
+//    self.task.note = self.noteField.text;
+//    self.task.done = self.doneSwitch.isOn;
 }
 
 

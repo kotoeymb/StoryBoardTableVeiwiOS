@@ -11,9 +11,19 @@
 @interface Tasky : NSObject
 
 @property (nonatomic, strong)NSString *name;
+@property (nonatomic,strong) NSString *fathername;
+
+@property (nonatomic, strong)NSString *address;
+@property (nonatomic,strong) NSString *note;
+
 
 @property (nonatomic, assign) BOOL done;
 
--(id)initWithName:(NSString *)name done: (BOOL)done;
+// -(id)initWithName:(NSString *)name done: (BOOL)done;
+
+
+ -(id)initWithName:(NSString *)name fathername:(NSString *)fathername address:(NSString *)address note :(NSString *)note done: (BOOL)done;
+
+
 
 @end

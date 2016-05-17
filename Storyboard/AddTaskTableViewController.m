@@ -17,6 +17,10 @@
 @implementation AddTaskTableViewController
 
 @synthesize nameField = _nameField;
+@synthesize fatherName = _fatherName;
+@synthesize addressField = _addressField;
+@synthesize noteField = _noteField;
+
 
 @synthesize taskListViewController = _taskListViewController;
 - (void)viewDidLoad {
@@ -41,8 +45,11 @@
 }
 
 - (void)doneButtonPress:(id)sender {
-    Tasky *newTask = [[Tasky alloc]initWithName:self.nameField.text done:NO];
+    Tasky *newTask = [[Tasky alloc]initWithName:self.nameField.text fathername:self.fatherName.text address:self.addressField.text note:self.noteField.text done:NO];
     
+    // fathername:self.fatherName.text address:self.addressField.text note:self.noteField.text
+    
+    // [self.taskListViewController.tasks addObject:newTask];
     [self.taskListViewController.tasks addObject:newTask];
     
     [self dismissModalViewControllerAnimated:YES];

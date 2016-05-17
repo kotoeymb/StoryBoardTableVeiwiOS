@@ -17,6 +17,11 @@
 - (IBAction)doneButtonPress:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UITextField *nameField;
+@property (strong, nonatomic) IBOutlet UITextField *fatherName;
+@property (strong, nonatomic) IBOutlet UITextField *addressField;
+@property (strong, nonatomic) IBOutlet UITextField *noteField;
+
+
 
 @property (strong, nonatomic) TaskliskTableViewController *taskListViewController;
 
