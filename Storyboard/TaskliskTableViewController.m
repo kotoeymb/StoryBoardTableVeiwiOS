@@ -109,8 +109,9 @@
     // TO do set the task
     
     cell.textLabel.text = currentTask.name;
+    
    //  cell.textLabel.text = currentTask.fathername;
-  //   cell.textLabel.text = currentTask.address;
+   //   cell.textLabel.text = currentTask.address;
    //  cell.textLabel.text = currentTask.note;
     
     return cell;

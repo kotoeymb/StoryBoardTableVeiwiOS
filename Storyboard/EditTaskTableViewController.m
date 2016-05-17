@@ -23,6 +23,8 @@
 @synthesize task = _task;
 
 
+
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -66,6 +68,7 @@
     self.noteField.text = self.task.note;
     [self.doneSwitch setOn:self.task.done];
     
+    
 }
 
 
@@ -91,11 +94,17 @@
 -(void)taskDataChanged:(id)sender
 {
     self.task.name = self.nameField.text;
-//    self.task.fathername = self.fatherNameField.text;
-//    self.task.address = self.addressField.text;
-//    self.task.note = self.noteField.text;
-//    self.task.done = self.doneSwitch.isOn;
+    self.task.fathername = self.fatherNameField.text;
+    self.task.address = self.addressField.text;
+    self.task.note = self.noteField.text;
+    self.task.done = self.doneSwitch.isOn;
 }
+
+//- (IBAction)doneAction:(id)sender {
+//    
+//   //  [self dismissViewControllerAnimated:YES];
+//    // [self dismissModalViewControllerAnimated:YES];{}
+//}
 
 
 

@@ -290,7 +290,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fMB-dE-y7p" userLabel="Note Field">
-                                                    <rect key="frame" x="8" y="8" width="535" height="30"/>
+                                                    <rect key="frame" x="8" y="8" width="535" height="39"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
@@ -335,9 +335,7 @@
                             <outlet property="delegate" destination="w7W-iV-Ovl" id="YNU-uB-M9q"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Edit Task" id="Ltj-YK-EJy">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="xDe-92-paJ"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Edit Task" id="Ltj-YK-EJy"/>
                     <connections>
                         <outlet property="addressField" destination="Vu2-oO-oPO" id="QY4-sw-RqY"/>
                         <outlet property="doneSwitch" destination="s6v-Td-yNm" id="K2N-W9-7JW"/>
@@ -348,7 +346,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7q0-gk-23J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2528" y="1288"/>
+            <point key="canvasLocation" x="2892" y="1041"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ilv-Py-LE9">
@@ -388,6 +386,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="V2H-US-C9R"/>
+        <segue reference="ZRd-1a-VAF"/>
     </inferredMetricsTieBreakers>
 </document>
